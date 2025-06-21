@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XI RPL4 - Sekolah Rekayasa Perangkat Lunak</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">
+            <div class="logo-icon">
+                <i class="fas fa-laptop-code"></i>
+            </div>
+            <div class="logo-text">XI RPL4</div>
+        </a>
+        
+        <nav>
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#team">Tim</a></li>
+                <li><a href="#gallery">Galeri</a></li>
+                <li><a href="#prestasi">Prestasi</a></li>
+                <li><a href="#harapan">Harapan</a></li>
+            </ul>
+        </nav>
+        
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu">
+        <button class="close-menu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="#home" class="active">Beranda</a></li>
+            <li><a href="#team">Tim</a></li>
+            <li><a href="#gallery">Galeri</a></li>
+            <li><a href="#prestasi">Prestasi</a></li>
+            <li><a href="#harapan">Harapan</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero parallax" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
+        <div class="vanta-bg" id="vanta-bg"></div>
+        
+        <div class="hero-content">
+            <h1>Kelas XI Rekayasa Perangkat Lunak 4</h1>
+            <p>Kami adalah komunitas siswa berbakat yang berfokus pada pengembangan perangkat lunak, inovasi teknologi, dan kekeluargaan yang erat.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">
+                    <i class="fas fa-users"></i> Kenali Kami
+                </button>
+                <button class="btn btn-outline">
+                    <i class="fas fa-images"></i> Galeri Kegiatan
+                </button>
+            </div>
+        </div>
+        
+        <div class="hero-3d">
+            <div id="model-container">
+                <!-- 3D Model will be rendered here -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Team Section -->
+    <section id="team" class="section">
+        <div class="section-title">
+            <h2>Pengurus Kelas</h2>
+            <p>Tim yang bertanggung jawab mengelola kegiatan dan administrasi kelas</p>
+        </div>
+        
+        <div class="team-container">
+            <div class="team-card animate-on-scroll">
+                <div class="team-img">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Ketua Kelas">
+                </div>
+                <div class="team-info">
+                    <h3>Andi Wijaya</h3>
+                    <p>Ketua Kelas</p>
+                    <div class="team-social">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-card animate-on-scroll">
+                <div class="team-img">
+                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Wakil Ketua">
+                </div>
+                <div class="team-info">
+                    <h3>Siti Rahayu</h3>
+                    <p>Wakil Ketua</p>
+                    <div class="team-social">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-card animate-on-scroll">
+                <div class="team-img">
+                    <img src="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sekretaris">
+                </div>
+                <div class="team-info">
+                    <h3>Budi Santoso</h3>
+                    <p>Sekretaris</p>
+                    <div class="team-social">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-card animate-on-scroll">
+                <div class="team-img">
+                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bendahara">
+                </div>
+                <div class="team-info">
+                    <h3>Dewi Lestari</h3>
+                    <p>Bendahara</p>
+                    <div class="team-social">
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section gallery parallax" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
+        <div class="parallax-content">
+            <div class="section-title">
+                <h2>Galeri Kegiatan</h2>
+                <p>Momen berharga dan aktivitas pembelajaran di kelas XI RPL4</p>
+            </div>
+            
+            <div class="gallery-container">
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kegiatan Belajar">
+                    <div class="gallery-overlay">
+                        <h3>Sesi Pemrograman</h3>
+                        <p>Praktik Java di laboratorium</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Diskusi Kelompok">
+                    <div class="gallery-overlay">
+                        <h3>Diskusi Proyek</h3>
+                        <p>Brainstorming aplikasi mobile</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Presentasi">
+                    <div class="gallery-overlay">
+                        <h3>Presentasi Kelas</h3>
+                        <p>Demo aplikasi web siswa</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Workshop">
+                    <div class="gallery-overlay">
+                        <h3>Workshop UI/UX</h3>
+                        <p>Bersama desainer profesional</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kegiatan Outdoor">
+                    <div class="gallery-overlay">
+                        <h3>Study Tour</h3>
+                        <p>Kunjungan ke perusahaan teknologi</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1543269865-0a740d43b90c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Acara Kelas">
+                    <div class="gallery-overlay">
+                        <h3>Perayaan Kelulusan</h3>
+                        <p>Acara kenangan kelas X</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Prestasi Section -->
+    <section id="prestasi" class="section prestasi">
+        <div class="section-title">
+            <h2>Prestasi Kelas</h2>
+            <p>Penghargaan dan pencapaian yang diraih oleh siswa XI RPL4</p>
+        </div>
+        
+        <div class="prestasi-grid">
+            <div class="prestasi-card animate-on-scroll">
+                <div class="prestasi-img">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Juara Lomba Coding">
+                </div>
+                <div class="prestasi-content">
+                    <div class="prestasi-meta">
+                        <span><i class="far fa-calendar"></i> 12 Mei 2023</span>
+                    </div>
+                    <h3>Juara 1 Lomba Coding Nasional</h3>
+                    <p>Tim kami meraih juara pertama dalam kompetisi coding tingkat nasional dengan mengembangkan aplikasi pengelolaan sampah berbasis AI.</p>
+                </div>
+            </div>
+            
+            <div class="prestasi-card animate-on-scroll">
+                <div class="prestasi-img">
+                    <img src="https://images.unsplash.com/photo-1533750349088-cd871a92f312?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hackathon">
+                </div>
+                <div class="prestasi-content">
+                    <div class="prestasi-meta">
+                        <span><i class="far fa-calendar"></i> 30 April 2023</span>
+                    </div>
+                    <h3>Finalis Hackathon Pendidikan</h3>
+                    <p>Menjadi finalis dalam hackathon pendidikan dengan solusi platform pembelajaran adaptif untuk siswa berkebutuhan khusus.</p>
+                </div>
+            </div>
+            
+            <div class="prestasi-card animate-on-scroll">
+                <div class="prestasi-img">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Data Science">
+                </div>
+                <div class="prestasi-content">
+                    <div class="prestasi-meta">
+                        <span><i class="far fa-calendar"></i> 15 April 2023</span>
+                    </div>
+                    <h3>Penghargaan Inovasi Data Science</h3>
+                    <p>Memperoleh penghargaan untuk proyek analisis prediktif pola konsumsi energi di perkotaan menggunakan machine learning.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WA Invitation -->
+    <div class="wa-invitation animate-on-scroll">
+        <div class="wa-icon">
+            <i class="fab fa-whatsapp"></i>
+        </div>
+        <div class="wa-content">
+            <h3>Gabung Komunitas RPL SMKN 9</h3>
+            <p>Bergabunglah dengan grup WhatsApp kami untuk mendapatkan informasi terkini, berbagi pengetahuan, dan terhubung dengan seluruh anggota komunitas RPL SMKN 9 Jakarta.</p>
+            <a href="#" class="wa-btn">
+                <i class="fab fa-whatsapp"></i> Gabung Sekarang
+            </a>
+        </div>
+    </div>
+
+    <!-- Harapan Section -->
+    <section id="harapan" class="section harapan" >
+        <div class="section-title">
+            <h2>Dinding Harapan</h2>
+            <p>Tinggalkan jejak digitalmu. Tuliskan harapan dan impianmu untuk masa depan kita bersama.</p>
+        </div>
+        
+        <div class="harapan-container">
+            <div class="hope-form animate-on-scroll">
+                <form id="hope-form">
+                    <div class="form-group">
+                        <label for="nama">Nama Inisial</label>
+                        <input type="text" id="nama" class="form-control" placeholder="Masukkan inisial nama Anda (cth: BS)" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="harapan">Harapan</label>
+                        <textarea id="harapan" class="form-control" placeholder="Tulis harapan Anda di sini..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Kirim Harapan
+                    </button>
+                </form>
+            </div>
+            
+            <div class="hope-wall" id="hope-wall">
+                <!-- Harapan akan dimuat di sini oleh JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="logo-text">XI RPL4</div>
+                </a>
+                <p style="margin-top: 20px; color: #94a3b8;">Kelas Rekayasa Perangkat Lunak angkatan 2023/2024 SMK Teknologi Informasi Jakarta.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Link Cepat</h3>
+                <ul class="footer-links">
+                    <li><a href="#home"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+                    <li><a href="#team"><i class="fas fa-chevron-right"></i> Pengurus</a></li>
+                    <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Galeri</a></li>
+                    <li><a href="#prestasi"><i class="fas fa-chevron-right"></i> Prestasi</a></li>
+                    <li><a href="#harapan"><i class="fas fa-chevron-right"></i> Harapan</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Fitur Kelas</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Jadwal Pelajaran</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Materi Pembelajaran</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Tugas & Proyek</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Forum Diskusi</a></li>
+                    <li><a href="#"><i class="fas fa-chevron-right"></i> Portofolio Siswa</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-col">
+                <h3>Newsletter</h3>
+                <p style="color: #94a3b8; margin-bottom: 20px;">Dapatkan informasi terbaru seputar kegiatan kelas dan materi pembelajaran.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Masukkan email Anda" style="background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(255, 255, 255, 0.1); color: white;">
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i> Berlangganan
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Kelas XI RPL4. Hak Cipta Dilindungi. Dibuat dengan <i class="fas fa-heart" style="color: var(--accent);"></i> oleh Tim XI RPL4</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
