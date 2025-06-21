@@ -190,83 +190,32 @@ function initMobileMenu() {
     });
 }
 
-// Fungsi untuk Dinding Harapan
-function initHopeWall() {
-    const hopeForm = document.getElementById('hope-form');
-    const hopeWall = document.getElementById('hope-wall');
-    
-    // Load existing hopes from localStorage
-    let hopes = JSON.parse(localStorage.getItem('harapanRPL4')) || [];
-    
-    // Display hopes
-    function displayHopes() {
-        hopeWall.innerHTML = '';
-        
-        if (hopes.length === 0) {
-            hopeWall.innerHTML = '<p class="text-center text-gray-500">Belum ada harapan yang ditulis. Jadilah yang pertama!</p>';
-            return;
-        }
-        
-        hopes.forEach((hope, index) => {
-            const hopeCard = document.createElement('div');
-            hopeCard.className = 'hope-card animate-on-scroll';
-            hopeCard.innerHTML = `
-                <div class="delete-hope" data-index="${index}"><i class="fas fa-times"></i></div>
-                <div class="hope-text">${hope.text}</div>
-                <div class="hope-author">- ${hope.name}</div>
-                <div class="hope-date">${hope.date}</div>
-            `;
-            hopeWall.appendChild(hopeCard);
-        });
-        
-        // Add event listeners for delete buttons
-        document.querySelectorAll('.delete-hope').forEach(button => {
-            button.addEventListener('click', function() {
-                const index = parseInt(this.getAttribute('data-index'));
-                hopes.splice(index, 1);
-                localStorage.setItem('harapanRPL4', JSON.stringify(hopes));
-                displayHopes();
-            });
-        });
-    }
-    
-    // Form submission
-    hopeForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('nama').value.trim();
-        const text = document.getElementById('harapan').value.trim();
-        
-        if (name && text) {
-            // Create new hope
-            const newHope = {
-                name: name,
-                text: text,
-                date: new Date().toLocaleDateString('id-ID', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                })
-            };
-            
-            // Add to array and save to localStorage
-            hopes.unshift(newHope);
-            localStorage.setItem('harapanRPL4', JSON.stringify(hopes));
-            
-            // Reset form
-            hopeForm.reset();
-            
-            // Update display
-            displayHopes();
-            
-            // Scroll to top of hope wall
-            document.getElementById('hope-wall').scrollIntoView({ behavior: 'smooth' });
-        }
+
+//Data Kelas
+fetch('data.json') // File JSON kamu
+.then(response => response.json())
+.then(data => {
+    const container = document.getElementById('team-container');
+    data.forEach(member => {
+    const card = `
+        <div class="team-card animate-on-scroll">
+        <div class="team-img">
+            <img src="${member.image}" alt="${member.role}">
+        </div>
+        <div class="team-info">
+            <h3>${member.name}</h3>
+            <p>${member.role}</p>
+            <div class="team-social">
+            <a href="${member.social.instagram}" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="${member.social.github}" class="social-icon"><i class="fab fa-github"></i></a>
+            <a href="${member.social.linkedin}" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        </div>`;
+    container.innerHTML += card;
     });
-    
-    // Initial display
-    displayHopes();
-}
+});
+
 
 // Initialize when page is loaded
 window.addEventListener('load', () => {
@@ -274,7 +223,6 @@ window.addEventListener('load', () => {
     initScrollAnimations();
     initSmoothScrolling();
     initMobileMenu();
-    initHopeWall();
     
     // Header scroll effect
     window.addEventListener('scroll', () => {
@@ -288,4 +236,3 @@ window.addEventListener('load', () => {
         }
     });
 });
-   

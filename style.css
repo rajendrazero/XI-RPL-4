@@ -14,6 +14,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -22,6 +23,15 @@ body {
     overflow-x: hidden;
     line-height: 1.6;
 }
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body::-webkit-scrollbar { width: 8px; }
+body::-webkit-scrollbar-track { background: #0f172a; }
+body::-webkit-scrollbar-thumb { background: var(--gradient); border-radius: 20px; }
+
 
 /* Header & Navigation */
 header {
@@ -395,22 +405,29 @@ nav a:hover::after, nav a.active::after {
 
 .prestasi-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* lebih fleksibel */
+    gap: 40px;
+    padding: 20px 0;
+    justify-content: center;
+    align-items: stretch; /* agar tinggi konsisten */
+    max-width: 1200px;
+    margin: 0 auto; /* pusatkan grid di halaman */
 }
 
 .prestasi-card {
-    background: rgba(30, 41, 59, 0.7);
-    border-radius: 20px;
+    background: rgba(30, 41, 59, 0.85);
+    border-radius: 18px;
+    padding: 20px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    height: 100%;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.12);
     display: flex;
     flex-direction: column;
-}
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    color: #fff;
+    text-align: left;
+  }
 
 .prestasi-card:hover {
     transform: translateY(-10px);
@@ -419,7 +436,7 @@ nav a:hover::after, nav a.active::after {
 }
 
 .prestasi-img {
-    height: 220px;
+    height: 290px;
     width: 100%;
 }
 
@@ -614,6 +631,19 @@ footer {
     color: #94a3b8;
     font-size: 0.9rem;
 }
+
+.footer-author-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-author-link:hover {
+    color: #4cc9f0; /* atau kamu bisa pakai lighten(var(--accent)) */
+    text-decoration: underline;
+  }
+  
 
 /* Animations */
 .animate-on-scroll {
@@ -899,26 +929,54 @@ footer {
 }
 
 .hope-wall {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
-}
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px 0;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+  
 
 .hope-card {
-    background: rgba(30, 41, 59, 0.7);
     border-radius: 20px;
+    min-width: 300px;
+    min-height: 300px;
     padding: 30px;
+    padding-bottom: 60px;
     transition: all 0.3s ease;
     border: 1px solid rgba(255, 255, 255, 0.1);
     position: relative;
     overflow: hidden;
 }
 
+
 .hope-card:hover {
     transform: translateY(-5px);
     border-color: var(--accent);
     box-shadow: 0 10px 25px rgba(76, 201, 240, 0.2);
-}
+  }  
+
+  .hope-wall .hope-card:nth-child(odd) {
+    background: rgba(30, 41, 59, 0.7); 
+  }
+  
+  .hope-wall .hope-card:nth-child(even) {
+    background: rgba(67, 56, 202, 0.15); 
+  }
+
+
+.hope-wall::-webkit-scrollbar {
+    height: 8px;
+  }
+  .hope-wall::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .hope-wall::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    border-radius: 4px;
+  }
 
 .hope-text {
     font-size: 1.1rem;
@@ -930,7 +988,6 @@ footer {
 }
 
 .hope-text::before {
-    content: '"';
     position: absolute;
     left: 0;
     top: -10px;
@@ -946,21 +1003,198 @@ footer {
 }
 
 .hope-date {
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
     font-size: 0.8rem;
     color: #94a3b8;
     text-align: right;
-}
+  }
 
-.delete-hope {
+  .hope-actions {
     position: absolute;
     top: 10px;
     right: 10px;
-    color: #ff6b6b;
+    display: flex;
+    gap: 8px;
+  }
+  
+  .hope-actions button {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 1rem;
     cursor: pointer;
-    opacity: 0.5;
-    transition: opacity 0.3s;
+    opacity: 0.6;
+    transition: opacity 0.2s;
+  }
+  
+  .hope-actions button:hover {
+    opacity: 1;
+  }
+  
+  .hope-actions .edit-hope i {
+    color: var(--accent);
+  }
+  
+  .hope-actions .delete-hope i {
+    color: #ff6b6b;
+  }
+
+
+  /* Loader Modern */
+  #loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(15, 23, 42, 0.95);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 9999;
+    transition: opacity 0.5s, visibility 0.5s;
 }
 
-.delete-hope:hover {
+.loader-content {
+    text-align: center;
+    max-width: 300px;
+    padding: 20px;
+}
+
+.tech-loader {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 30px;
+}
+
+.hexagon {
+    position: absolute;
+    width: 40px;
+    height: 23px;
+    background: linear-gradient(135deg, #4361ee, #4cc9f0);
+    animation: hexagon 3s infinite ease-in-out;
+    opacity: 0.8;
+}
+
+.hexagon:before, .hexagon:after {
+    content: "";
+    position: absolute;
+    width: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+}
+
+.hexagon:before {
+    bottom: 100%;
+    border-bottom: 11.5px solid #4361ee;
+}
+
+.hexagon:after {
+    top: 100%;
+    width: 0;
+    border-top: 11.5px solid #4cc9f0;
+}
+
+.hex1 { top: 25px; left: 30px; animation-delay: 0s; }
+.hex2 { top: 0; left: 0; animation-delay: 0.2s; }
+.hex3 { top: 0; right: 0; animation-delay: 0.4s; }
+.hex4 { bottom: 0; left: 0; animation-delay: 0.6s; }
+.hex5 { bottom: 0; right: 0; animation-delay: 0.8s; }
+
+@keyframes hexagon {
+    0%, 100% { transform: scale(1); opacity: 0.8; }
+    50% { transform: scale(0.8); opacity: 0.4; }
+}
+
+.loader-text {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+.loader-progress {
+    width: 200px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.loader-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #4361ee, #4cc9f0);
+    border-radius: 2px;
+    animation: progress 2s infinite linear;
+}
+
+@keyframes progress {
+    0% { width: 0%; transform: translateX(-100%); }
+    50% { width: 80%; }
+    100% { width: 0%; transform: translateX(100%); }
+}
+
+/* Notifikasi Modern */
+.notif {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(30, 41, 59, 0.95);
+    border: 1px solid rgba(76, 201, 240, 0.3);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.4s ease;
+    z-index: 10000;
+    max-width: 350px;
+    backdrop-filter: blur(10px);
+}
+
+.notif.show {
+    transform: translateY(0);
     opacity: 1;
+}
+
+.notif-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.notif.success .notif-icon {
+    color: #4cc9f0;
+}
+
+.notif.error .notif-icon {
+    color: #ff6b6b;
+}
+
+.notif-text {
+    flex-grow: 1;
+}
+
+.notif-close {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 10px;
+    transition: color 0.3s;
+}
+
+.notif-close:hover {
+    color: #4cc9f0;
 }
