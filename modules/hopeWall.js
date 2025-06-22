@@ -1,5 +1,5 @@
 import { showNotif } from './ui.js';
-import { generateId } from './utilities.js';
+import { generateId, startFly, stopFly, openTrash, closeTrash } from './utilities.js';
 
 const BIN_ID = '6856a1d98960c979a5ae622a';
 const API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}/latest`;
@@ -11,9 +11,24 @@ let dataHarapan = [];
 export function initHopeWall() {
   // Load initial data
   loadInitialData();
-  
+    
   // Setup form submission
   document.getElementById('hope-form').addEventListener('submit', handleFormSubmit);
+
+   // Setup button events
+   const submitButton = document.querySelector('button[type="submit"]');
+   const resetButton = document.querySelector('button[type="button"]');
+   
+   if (submitButton) {
+     submitButton.addEventListener('mouseenter', startFly);
+     submitButton.addEventListener('mouseleave', stopFly);
+   }
+   
+   if (resetButton) {
+     resetButton.addEventListener('mouseenter', openTrash);
+     resetButton.addEventListener('mouseleave', closeTrash);
+     resetButton.addEventListener('click', resetHopeForm);
+   }
 }
 
 function loadInitialData() {
