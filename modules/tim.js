@@ -73,7 +73,7 @@ const teamData = [
     {
       "name": "Afsar Nafis",
       "role": "Siswa",
-      "image": "img/struktur/afsar.jpeg",
+      "image": "img/struktur/afsar.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -93,7 +93,7 @@ const teamData = [
     {
       "name": "Alvino Nugraha Nasution",
       "role": "Siswa",
-      "image": "img/struktur/alvino_nugraha.jpeg",
+      "image": "img/struktur/alvino.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -103,7 +103,7 @@ const teamData = [
     {
       "name": "Alzira Ukhty Zaskia",
       "role": "Siswa",
-      "image": "img/struktur/alzira_ukhty.jpeg",
+      "image": "img/struktur/alzira.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -113,7 +113,7 @@ const teamData = [
     {
       "name": "Amanda Aulia Shafira",
       "role": "Siswa",
-      "image": "img/struktur/amanda_aulia.jpeg",
+      "image": "img/struktur/amanda.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -123,7 +123,7 @@ const teamData = [
     {
       "name": "Awanda Dhaffa Raditya",
       "role": "Siswa",
-      "image": "img/struktur/awanda_dhaffa.jpeg",
+      "image": "img/struktur/awanda.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -133,7 +133,7 @@ const teamData = [
     {
       "name": "Bintang Aditya Risfa",
       "role": "Siswa",
-      "image": "img/struktur/bintang_aditya.jpeg",
+      "image": "img/struktur/bintang.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -143,7 +143,7 @@ const teamData = [
     {
       "name": "Brenda Estella Silalahi",
       "role": "Siswa",
-      "image": "img/struktur/brenda_estella.jpeg",
+      "image": "img/struktur/brenda.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -153,7 +153,7 @@ const teamData = [
     {
       "name": "Chindi Aulia",
       "role": "Siswa",
-      "image": "img/struktur/chindi.jpeg",
+      "image": "img/struktur/chindy.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -163,7 +163,7 @@ const teamData = [
     {
       "name": "Dania Sifa",
       "role": "Siswa",
-      "image": "img/struktur/dania.jpeg",
+      "image": "img/struktur/dania.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -173,7 +173,7 @@ const teamData = [
     {
       "name": "Dhea Afrilla Dewi",
       "role": "Siswa",
-      "image": "img/struktur/dhea_afrilla.jpeg",
+      "image": "img/struktur/dhea.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -183,7 +183,7 @@ const teamData = [
     {
       "name": "Erlangga Ramzi Putra",
       "role": "Siswa",
-      "image": "img/struktur/erlangga_ramzi.jpeg",
+      "image": "img/struktur/erlangga.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -193,7 +193,7 @@ const teamData = [
     {
       "name": "Gracia Jovina Simanjuntak",
       "role": "Siswa",
-      "image": "img/struktur/gracia_jovina.jpeg",
+      "image": "img/struktur/echa.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -203,7 +203,7 @@ const teamData = [
     {
       "name": "Haidil Habibi",
       "role": "Siswa",
-      "image": "img/struktur/haidil.jpeg",
+      "image": "img/struktur/haidil.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -213,7 +213,7 @@ const teamData = [
     {
       "name": "Intan Wahyu Kesuma",
       "role": "Siswa",
-      "image": "img/struktur/intan_wahyu.jpeg",
+      "image": "img/struktur/intan.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -223,7 +223,7 @@ const teamData = [
     {
       "name": "Keysha Fira Maenda",
       "role": "Siswa",
-      "image": "img/struktur/keysha_fira.jpeg",
+      "image": "img/struktur/keysha.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -233,7 +233,7 @@ const teamData = [
     {
       "name": "Luvia Hanum",
       "role": "Siswa",
-      "image": "img/struktur/luvia.jpeg",
+      "image": "img/struktur/luvia.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -243,7 +243,7 @@ const teamData = [
     {
       "name": "Muhammad Fahdhy Akbar",
       "role": "Siswa",
-      "image": "img/struktur/muhammad_fahdhy.jpeg",
+      "image": "img/struktur/fahdhy.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -253,7 +253,7 @@ const teamData = [
     {
       "name": "Muhammad Shubki Arifin",
       "role": "Siswa",
-      "image": "img/struktur/muhammad_shubki.jpeg",
+      "image": "img/struktur/shubki.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -263,7 +263,7 @@ const teamData = [
     {
       "name": "Najla Ajjauza",
       "role": "Siswa",
-      "image": "img/struktur/najla.jpeg",
+      "image": "img/struktur/najla.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -273,7 +273,7 @@ const teamData = [
     {
       "name": "Nurannisa",
       "role": "Siswa",
-      "image": "img/struktur/nurannisa.jpeg",
+      "image": "img/struktur/nisa.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -293,7 +293,7 @@ const teamData = [
     {
       "name": "Rajendra Athallah Fawwaz",
       "role": "Siswa",
-      "image": "img/struktur/rajendra_athallah.jpeg",
+      "image": "img/struktur/rajendra.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -303,7 +303,7 @@ const teamData = [
     {
       "name": "Randi Hartono",
       "role": "Siswa",
-      "image": "img/struktur/randi.jpeg",
+      "image": "img/struktur/randi.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -313,7 +313,7 @@ const teamData = [
     {
       "name": "Rendi Razalie",
       "role": "Siswa",
-      "image": "img/struktur/rendi.jpeg",
+      "image": "img/struktur/rendi.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -323,7 +323,7 @@ const teamData = [
     {
       "name": "Ridwan Al Hafiz",
       "role": "Siswa",
-      "image": "img/struktur/ridwan_al.jpeg",
+      "image": "img/struktur/hafiz.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -333,7 +333,7 @@ const teamData = [
     {
       "name": "Satria Raffi Affandi",
       "role": "Siswa",
-      "image": "img/struktur/satria_raffi.jpeg",
+      "image": "img/struktur/satria.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
@@ -343,7 +343,7 @@ const teamData = [
     {
       "name": "Tri Aulia Zahra",
       "role": "Siswa",
-      "image": "img/struktur/tri_aulia.jpeg",
+      "image": "img/struktur/aulia.jpg",
       "social": {
         "instagram": "#",
         "github": "#",
