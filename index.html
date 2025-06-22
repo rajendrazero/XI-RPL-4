@@ -11,6 +11,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -55,12 +56,16 @@
     </div>
 
     <!-- Hero Section -->
-    <section id="home" class="hero parallax" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
+    <section id="home" class="hero parallax relative bg-cover bg-center transition-all duration-1000" style="background-image: url('img/kegiatan/bukber.jpg');">
+    
+        <!-- Overlay untuk transisi -->
+        <div id="bg-transition" class="absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000 pointer-events-none z-0"></div>
+    
         <div class="vanta-bg" id="vanta-bg"></div>
-        
-        <div class="hero-content">
+    
+        <div class="hero-content z-10 relative">
             <h1>Kelas XI RPL 4</h1>
-            <p>Kami adalah siswa yang berfokus pada pengembangan perangkat lunak dan, inovasi teknologi, atas bimbingan bapak Ardiansyah, ST.</p>
+            <p>Kami adalah siswa yang berfokus pada pengembangan perangkat lunak dan inovasi teknologi, atas bimbingan bapak Ardiansyah, ST.</p>
             <div class="hero-buttons">
                 <button class="btn btn-primary">
                     <i class="fas fa-users"></i> Kenali Kami
@@ -70,14 +75,13 @@
                 </button>
             </div>
         </div>
-        
-        <div class="hero-3d">
-            <div id="model-container">
-                <!-- 3D Model will be rendered here -->
-            </div>
+    
+        <div class="hero-3d z-10 relative">
+            <div id="model-container"></div>
         </div>
     </section>
-
+  
+  
     <!-- Team Section -->
     <section id="team" class="section">
         <div class="section-title">
@@ -94,111 +98,30 @@
     <!-- Gallery Section -->
     <section id="gallery" class="section gallery parallax" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
         <div class="parallax-content">
-            <div class="section-title">
-                <h2>Galeri Kegiatan</h2>
-                <p>Momen berharga dan aktivitas pembelajaran di kelas XI RPL4</p>
-            </div>
-            
-            <div class="gallery-container">
-                <div class="gallery-item animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kegiatan Belajar">
-                    <div class="gallery-overlay">
-                        <h3>Sesi Pemrograman</h3>
-                        <p>Praktik Java di laboratorium</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Diskusi Kelompok">
-                    <div class="gallery-overlay">
-                        <h3>Diskusi Proyek</h3>
-                        <p>Brainstorming aplikasi mobile</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Presentasi">
-                    <div class="gallery-overlay">
-                        <h3>Presentasi Kelas</h3>
-                        <p>Demo aplikasi web siswa</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Workshop">
-                    <div class="gallery-overlay">
-                        <h3>Workshop UI/UX</h3>
-                        <p>Bersama desainer profesional</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kegiatan Outdoor">
-                    <div class="gallery-overlay">
-                        <h3>Study Tour</h3>
-                        <p>Kunjungan ke perusahaan teknologi</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item animate-on-scroll">
-                    <img src="https://images.unsplash.com/photo-1543269865-0a740d43b90c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Acara Kelas">
-                    <div class="gallery-overlay">
-                        <h3>Perayaan Kelulusan</h3>
-                        <p>Acara kenangan kelas X</p>
-                    </div>
-                </div>
-            </div>
+          <div class="section-title">
+            <h2>Galeri Kegiatan</h2>
+            <p>Momen berharga dan aktivitas pembelajaran di kelas XI RPL4</p>
+          </div>
+      
+          <div class="gallery-container" id="galleryContainer">
+            <!-- Gallery items will be inserted here -->
+          </div>
         </div>
-    </section>
+      </section>
+      
 
     <!-- Prestasi Section -->
     <section id="prestasi" class="section prestasi">
         <div class="section-title">
-            <h2>Prestasi Kelas</h2>
-            <p>Penghargaan dan pencapaian yang diraih oleh siswa XI RPL4</p>
+          <h2>Prestasi Kelas</h2>
+          <p>Penghargaan dan pencapaian yang diraih oleh siswa XI RPL4</p>
         </div>
-        
-        <div class="prestasi-grid">
-            <div class="prestasi-card animate-on-scroll">
-                <div class="prestasi-img">
-                    <img src="img/prestasi/prestasi-fic.jpeg" alt="Juara FIC">
-                </div>
-                <div class="prestasi-content">
-                    <div class="prestasi-meta">
-                        <span><i class="far fa-calendar"></i> 23 Mei 2025</span>
-                    </div>
-                    <h3>Juara 2 Lomba Foodtech Innovation Compotition 2025</h3>
-                    <p>Selamat kepada <strong>Rajendra Athallah Fawwaz</strong> dan tim yang berhasil meraih juara kedua dalam perlombaan FIC yang di adakan di Univeristas Katolik Santo Thomas Medan 2025</p>
-                </div>
-            </div>
-            
-            <div class="prestasi-card animate-on-scroll">
-                <div class="prestasi-img">
-                    <img src="img/prestasi/prestasi-lks.jpeg" alt="Juara LKS">
-                </div>
-                <div class="prestasi-content">
-                    <div class="prestasi-meta">
-                        <span><i class="far fa-calendar"></i> 10 Juni 2025</span>
-                    </div>
-                    <h3>Juara 2 Lomba Kompetensi Siswa</h3>
-                    <p>Selamat kepada <strong>Muhammad Nur Rajif</strong> yang berhasil meraih juara kedua dalam perlombaan kompetensi siswa WEB Technologies 2025</p>
-                </div>
-            </div>
-
-            <div class="prestasi-card animate-on-scroll">
-                <div class="prestasi-img">
-                    <img src="img/prestasi/default-avatar.png" alt="Juara">
-                </div>
-                <div class="prestasi-content">
-                    <div class="prestasi-meta">
-                        <span><i class="far fa-calendar"></i>mendatang...</span>
-                    </div>
-                    <h3>Mendatang...</h3>
-                    <p>Mendatang..</p>
-                </div>
-            </div>
+      
+        <div class="prestasi-grid" id="prestasiContainer">
+          <!-- Prestasi-card akan dimasukkan dari JavaScript -->
         </div>
-    </section>
+      </section>
+      
 
     <!-- Harapan Section -->
     <section id="harapan" class="section harapan" >
@@ -220,9 +143,39 @@
                         <textarea id="hope-text" class="form-control" placeholder="Tulis harapan Anda..." required></textarea>
                     </div>
                     
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">
-                        <i class="fas fa-paper-plane"></i> Kirim Harapan
-                    </button>
+                    <div class="flex flex-col md:flex-row gap-4 w-full max-w-md mx-auto mt-6">
+
+                        <!-- Tombol Kirim Harapan -->
+                        <button type="submit"
+                          class="relative group flex items-center justify-center gap-2 bg-blue-600 text-white font-semibold py-3 px-6 w-full md:w-1/2 rounded-lg shadow-lg overflow-hidden transition-all duration-300 hover:bg-blue-700 "  onmouseenter="startFly()" onmouseleave="stopFly()">
+                          
+                          <i id="planeIcon"
+                          class="fas fa-paper-plane text-xl transition-transform duration-500 group-hover:translate-x-3 group-hover:-translate-y-2 group-hover:rotate-45 group-hover:text-yellow-400"></i>
+                          
+                          <!-- Teks muncul setelah ikon -->
+                          <span class="transition-all duration-300 group-hover:opacity-0">Kirim Harapan</span>
+                        </button>
+                      
+                        <!-- Tombol Batal -->
+                        <button type="button" onclick="resetHopeForm()" onmouseenter="openTrash()" onmouseleave="closeTrash()"
+                        class="relative group flex items-center justify-center gap-2 bg-red-600 text-white font-semibold py-3 px-6 w-full md:w-1/2 rounded-lg shadow-lg overflow-hidden transition-all duration-500 hover:bg-gray-800 hover:text-gray-300">
+
+                            <!-- Ikon Tong Sampah -->
+                            <span id="trashIcon"
+                                class="text-xl transition-transform duration-700 ease-in-out group-hover:scale-125 group-hover:text-yellow-300 group-hover:-translate-y-2">
+                                <i class="fas fa-trash text-xl transition-transform duration-300"></i>
+                            </span>
+
+                            <!-- Teks Batal Disedot -->
+                            <span
+                                class="transition-all duration-[1800ms] ease-in-out group-hover:scale-50 group-hover:-translate-y-10 group-hover:-translate-x-8 group-hover:rotate-[720deg] group-hover:opacity-0">
+                                Batal
+                            </span>
+                        </button>
+
+                      </div>
+                      
+                      
                 </form>
             </div>
             
@@ -308,8 +261,6 @@
             <p>&copy; 2025 Kelas XI RPL4. Hak Cipta Dilindungi. Dibuat dengan <i class="fas fa-heart" style="color: var(--accent);"></i> oleh <a href="https://rajendrazero.github.io" target='_blank' class="footer-author-link" >Rajendra Athallah Fawwaz</a></p>
         </div>
     </footer>
-      
-    <script src="main.js"></script>
 
     <!-- Loader Modern -->
     <div id="loader">
@@ -337,209 +288,7 @@
         </button>
     </div>
 
-  
-    <script>
-         const BIN_ID = '6856a1d98960c979a5ae622a';
-        const API_URL = `https://api.jsonbin.io/v3/b/${BIN_ID}/latest`;
-        const API_PUT = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
-        const MASTER_KEY = '$2a$10$7imEXBjuQHy3kKGZyBZccumUxrrVRKqAlShV.sIjByFJhLXona.f6';
-      
-        let dataHarapan = [];
-      
-        // Fungsi untuk menampilkan notifikasi
-        function showNotif(msg, type = "success") {
-            const notif = document.getElementById('notif');
-            const notifText = document.getElementById('notif-text');
-            
-            // Setel konten notifikasi
-            notifText.textContent = msg;
-            
-            // Setel tipe notifikasi
-            notif.className = 'notif'; // Reset class
-            notif.classList.add(type);
-            
-            // Tampilkan notifikasi
-            notif.classList.add('show');
-            
-            // Sembunyikan otomatis setelah 3 detik
-            setTimeout(() => {
-                notif.classList.remove('show');
-            }, 3000);
-        }
-
-        // Event listener untuk tombol close
-        document.querySelector('.notif-close').addEventListener('click', function() {
-            document.getElementById('notif').classList.remove('show');
-        });
-    
-        function resetHopeForm() {
-            const form = document.getElementById('hope-form');
-            form.reset(); 
-            delete form.dataset.editing; 
-        }
-    
-        function generateId() {
-          return '_' + Math.random().toString(36).substr(2, 9);
-        }
-      
-        function renderHopeWall() {
-          const hopeWall = document.getElementById('hope-wall');
-          hopeWall.innerHTML = '';
-          
-          if (dataHarapan.length === 0) {
-            hopeWall.innerHTML = `
-              <div class="no-hope-message">
-                <i class="fas fa-comment-alt"></i>
-                <h3>Belum ada harapan</h3>
-                <p>Jadilah yang pertama menulis harapan!</p>
-              </div>
-            `;
-            return;
-          }
-          
-          dataHarapan.forEach((item) => {
-            const card = document.createElement('div');
-            card.className = 'hope-card';
-            card.innerHTML = `
-              <div class="hope-initial">${item.name.toUpperCase()}</div>
-              <div class="hope-actions">
-                <button class="edit-hope" data-id="${item.id}" title="Edit">
-                  <i class="fas fa-pen"></i>
-                </button>
-                <button class="delete-hope" data-id="${item.id}" title="Hapus">
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-              </div>
-              <div class="hope-text">${item.text}</div>
-              <div class="hope-meta">
-                <div class="hope-date"><i class="far fa-clock"></i> ${item.date}</div>
-              </div>
-            `;
-            hopeWall.appendChild(card);
-          });
-      
-          document.querySelectorAll('.delete-hope').forEach(btn =>
-            btn.addEventListener('click', handleDelete)
-          );
-          document.querySelectorAll('.edit-hope').forEach(btn =>
-            btn.addEventListener('click', handleEdit)
-          );
-        }
-      
-        function updateRemoteData() {
-          document.getElementById('loader').style.display = 'flex';
-          fetch(API_PUT, {
-            method: 'PUT',
-            headers: {
-              'Content-Type': 'application/json',
-              'X-Master-Key': MASTER_KEY,
-              'X-Bin-Versioning': 'false'
-            },
-            body: JSON.stringify(dataHarapan)
-          })
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Gagal menyimpan data');
-            }
-            return response.json();
-          })
-          .then(() => {
-            renderHopeWall();
-            resetHopeForm();
-            showNotif('Berhasil menyimpan harapan!', 'success');
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-            showNotif('Gagal menyimpan data: ' + error.message, 'error');
-          })
-          .finally(() => {
-            document.getElementById('loader').style.display = 'none';
-          });
-        }
-      
-        function handleDelete(e) {
-          const id = e.currentTarget.dataset.id;
-          dataHarapan = dataHarapan.filter(item => item.id !== id);
-          updateRemoteData();
-        }
-      
-        function handleEdit(e) {
-          const id = e.currentTarget.dataset.id;
-          const item = dataHarapan.find(d => d.id === id);
-          const index = dataHarapan.findIndex(d => d.id === id);
-          document.getElementById('nama').value = item.name;
-          document.getElementById('hope-text').value = item.text;
-          document.getElementById('hope-form').dataset.editing = index;
-          showNotif('Sekarang Anda bisa mengedit harapan', 'success');
-          window.scrollTo({ top: document.getElementById('harapan').offsetTop, behavior: 'smooth' });
-        }
-      
-        document.addEventListener('DOMContentLoaded', () => {
-          // Tampilkan loader saat memulai fetch
-          document.getElementById('loader').style.display = 'flex';
-
-          fetch(API_URL, {
-            headers: { 'X-Master-Key': MASTER_KEY }
-          })
-          .then(res => {
-            if (!res.ok) {
-              throw new Error('Gagal memuat data');
-            }
-            return res.json();
-          })
-          .then(json => {
-            dataHarapan = json.record;
-            renderHopeWall();
-            if (dataHarapan.length > 0) {
-              showNotif(`Berhasil memuat ${dataHarapan.length} harapan`, 'success');
-            }
-          })
-          .catch((error) => {
-            console.error('Error:', error);
-            showNotif('Gagal memuat data: ' + error.message, 'error');
-            // Tampilkan data dummy jika gagal
-            dataHarapan = [
-              { id: '1', name: 'RJ', text: 'Semoga di tahun depan, kita semua bisa mencapai target belajar yang telah kita tentukan bersama. Mari terus belajar dan berkembang!', date: '12 Juli 2024' },
-              { id: '2', name: 'BS', text: 'Semoga dunia lebih damai.', date: '21 Juni 2025' },
-              { id: '3', name: 'AL', text: 'Sukses UTBK dan masuk PTN impian!', date: '20 Juni 2025' }
-            ];
-            renderHopeWall();
-          })
-          .finally(() => {
-            document.getElementById('loader').style.display = 'none';
-          });
-      
-          document.getElementById('hope-form').addEventListener('submit', function (e) {
-            e.preventDefault();
-            const name = document.getElementById('nama').value.trim();
-            const text = document.getElementById('hope-text').value.trim();
-            
-            if (!name || !text) {
-              showNotif('Nama dan harapan harus diisi!', 'error');
-              return;
-            }
-            
-            const date = new Date().toLocaleDateString('id-ID', {
-              day: '2-digit', month: 'long', year: 'numeric'
-            });
-      
-            const editIndex = this.dataset.editing;
-            if (editIndex !== undefined) {
-              dataHarapan[editIndex] = {
-                ...dataHarapan[editIndex],
-                name, text, date
-              };
-              delete this.dataset.editing;
-            } else {
-              dataHarapan.push({ id: generateId(), name, text, date });
-            }
-      
-            this.reset();
-            resetHopeForm();
-            updateRemoteData();
-          });
-        });
-    </script>
+    <script type="module" src="main.js"></script>
   
 </body>
 </html>

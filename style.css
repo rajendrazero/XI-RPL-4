@@ -165,6 +165,15 @@ nav a:hover::after, nav a.active::after {
     overflow: hidden;
 }
 
+#bg-transition {
+    transform: scale(1);
+  }
+  #bg-transition.opacity-100 {
+    transform: scale(1.05);
+    transition: opacity 1s ease-in-out, transform 2s ease;
+  }
+  
+
 .vanta-bg {
     position: absolute;
     top: 0;
@@ -1198,3 +1207,33 @@ footer {
 .notif-close:hover {
     color: #4cc9f0;
 }
+
+
+@keyframes fly-away {
+    0% {
+      transform: translateX(0) rotate(0);
+      opacity: 1;
+      width: 0%;
+    }
+    50% {
+      transform: translateX(200%) rotate(45deg);
+      opacity: 0;   
+      width: 30%;                                                                                     
+    }
+    51% {
+      transform: translateX(-150%) rotate(-45deg);
+      opacity: 0;
+      width: 0%;
+    }
+    100% {
+      transform: translateX(0) rotate(0);
+      opacity: 1;
+      width: 0%;
+  
+    }
+  }
+
+  .fly-loop {
+    animation: fly-away 3s ease-in-out infinite;
+  }
+
