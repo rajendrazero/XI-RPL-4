@@ -1349,7 +1349,7 @@ footer {
 
 .modal-carousel {
   width: 100%;
-  height: 340px;
+  height: 440px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1360,7 +1360,7 @@ footer {
 
 .modal-content img {
   max-width: 98%;
-  max-height: 320px;
+  max-height: 410px;
   object-fit: contain;
   border-radius: 16px;
   box-shadow: 0 2px 16px rgba(76,201,240,0.08);
@@ -1463,7 +1463,7 @@ footer {
 @media (max-width: 600px) {
   .modal-content {
     width: 90vw;
-    min-width: 0;
+    min-width: 90vw;
     max-width: 90vw;
     border-radius: 12px;
   }

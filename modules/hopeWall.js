@@ -136,10 +136,60 @@ function updateRemoteData() {
   });
 }
 
+function showDeleteConfirm(id, onConfirm) {
+  // Cek jika sudah ada popup, hapus dulu
+  let oldPopup = document.getElementById('hope-delete-confirm');
+  if (oldPopup) oldPopup.remove();
+
+  // Buat overlay
+  const overlay = document.createElement('div');
+  overlay.id = 'hope-delete-confirm';
+  overlay.style.position = 'fixed';
+  overlay.style.top = 0;
+  overlay.style.left = 0;
+  overlay.style.width = '100vw';
+  overlay.style.height = '100vh';
+  overlay.style.background = 'rgba(0,0,0,0.4)';
+  overlay.style.display = 'flex';
+  overlay.style.alignItems = 'center';
+  overlay.style.justifyContent = 'center';
+  overlay.style.zIndex = 9999;
+
+  // Buat box konfirmasi
+  const box = document.createElement('div');
+  box.style.background = '#fff';
+  box.style.padding = '2rem 1.5rem';
+  box.style.borderRadius = '12px';
+  box.style.boxShadow = '0 4px 24px rgba(0,0,0,0.15)';
+  box.style.textAlign = 'center';
+  box.innerHTML = `
+    <div style="font-size:2rem;color:#e74c3c;margin-bottom:0.5rem"><i class='fas fa-exclamation-triangle'></i></div>
+    <div style="font-size:1.1rem;margin-bottom:1rem;color:#0f172a">Yakin ingin menghapus harapan ini?</div>
+    <button id="hope-confirm-yes" style="background:#e74c3c;color:#fff;padding:0.5rem 1.2rem;border:none;border-radius:6px;margin-right:0.7rem;cursor:pointer;font-weight:bold;">Ya, hapus</button>
+    <button id="hope-confirm-no" style="background:#eee;color:#333;padding:0.5rem 1.2rem;border:none;border-radius:6px;cursor:pointer;font-weight:bold;">Batal</button>
+  `;
+  overlay.appendChild(box);
+  document.body.appendChild(overlay);
+
+  document.getElementById('hope-confirm-yes').onclick = function() {
+    overlay.remove();
+    onConfirm();
+  };
+  document.getElementById('hope-confirm-no').onclick = function() {
+    overlay.remove();
+  };
+  // Tutup jika klik di luar box
+  overlay.onclick = function(e) {
+    if (e.target === overlay) overlay.remove();
+  };
+}
+
 function handleDelete(e) {
   const id = e.currentTarget.dataset.id;
-  dataHarapan = dataHarapan.filter(item => item.id !== id);
-  updateRemoteData();
+  showDeleteConfirm(id, function() {
+    dataHarapan = dataHarapan.filter(item => item.id !== id);
+    updateRemoteData();
+  });
 }
 
 function handleEdit(e) {
