@@ -11,6 +11,18 @@ import { initPrestasi } from './modules/prestasi.js';
 import { initGaleri } from './modules/galeri.js';
 import { initTim } from './modules/tim.js';
 
+window.addEventListener('load', () => {
+  // Initialize 3D model after page loads
+  init3DModel();
+});
+
+const cursor = document.getElementById('custom-cursor');
+
+window.addEventListener('mousemove', (e) => {
+  cursor.style.left = e.clientX + 'px';
+  cursor.style.top = e.clientY + 'px';
+});
+
 // main.js - Perbaiki urutan dan penanganan
 document.addEventListener('DOMContentLoaded', () => {
     initBackgroundTransition();
@@ -28,7 +40,3 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 300);
   });
 
-window.addEventListener('load', () => {
-  // Initialize 3D model after page loads
-  init3DModel();
-});

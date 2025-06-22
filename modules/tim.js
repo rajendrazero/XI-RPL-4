@@ -1,3 +1,4 @@
+import { showNotif } from './ui.js';
 // Team data array
 const teamData = [
     {
@@ -370,20 +371,29 @@ const teamData = [
           <h3>${member.name}</h3>
           <p>${member.role}</p>
           <div class="team-social">
-            <a href="${member.social.instagram}" class="social-icon" aria-label="Instagram ${member.name}">
+            <a href="${member.social.instagram}" class="social-icon" data-link="${member.social.instagram}" aria-label="Instagram ${member.name}">
               <i class="fab fa-instagram"></i>
             </a>
-            <a href="${member.social.github}" class="social-icon" aria-label="GitHub ${member.name}">
+            <a href="${member.social.github}" class="social-icon" data-link="${member.social.github}" aria-label="GitHub ${member.name}">
               <i class="fab fa-github"></i>
             </a>
-            <a href="${member.social.linkedin}" class="social-icon" aria-label="LinkedIn ${member.name}">
+            <a href="${member.social.linkedin}" class="social-icon" data-link="${member.social.linkedin}" aria-label="LinkedIn ${member.name}">
               <i class="fab fa-linkedin"></i>
             </a>
           </div>
         </div>
       `;
-      
       container.appendChild(card);
+    });
+    // Tambahkan event listener social media SETELAH semua card dimasukkan ke DOM
+    container.querySelectorAll('.social-icon').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const url = this.getAttribute('data-link');
+        if (!url || url === '#') {
+          e.preventDefault();
+          showNotif('Akun Belum Terdaftar', 'error');
+        }
+      });
     });
   }
   
