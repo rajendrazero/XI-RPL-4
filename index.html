@@ -124,7 +124,7 @@
 
 
     <!-- Gallery Section -->
-    <section id="gallery" class="section gallery parallax" style="background-image: url('https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');">
+    <section id="gallery" class="section gallery parallax" style="background-image: url('img/kegiatan/kunjangan-rumah-walikelas2.jpg');">
         <div class="parallax-content">
           <div class="section-title">
             <h2>Galeri Kegiatan</h2>
@@ -150,6 +150,24 @@
         </div>
       </section>
       
+
+   <section id="terimakasih" class="section terimakasih parallax bg-cover bg-center" style="background-image: url('img/kegiatan/hari-guru3.jpg');">
+  <div class="terimakasih-content parallax-content bg-black bg-opacity-50 py-16 px-6 max-w-4xl mx-auto rounded-lg">
+    <div class="section-title text-center text-white">
+      <h2 class="text-3xl font-semibold flex items-center justify-center gap-2 mb-6">
+        <i class="fa-solid fa-heart text-[#e25555]"></i>
+        Terima Kasih Pak Ardi
+        <i class="fa-solid fa-heart text-[#e25555]"></i>
+      </h2>
+      <p class="text-base leading-relaxed mb-4">
+        Ucapan terima kasih dan penghargaan setinggi-tingginya kepada Bapak Ardiansyah, ST yang telah membimbing, menginspirasi, dan mendampingi kami dari awal kelas XI hingga kini kami melangkah ke kelas XII. Setiap ilmu, nasihat, dan semangat yang Bapak berikan akan selalu kami kenang dan menjadi bekal berharga untuk masa depan kami. Semoga Bapak selalu diberikan kesehatan, kebahagiaan, dan kesuksesan. Terima kasih atas segala dedikasi dan kasih sayang yang telah Bapak curahkan untuk kami.
+      </p>
+      <p class="italic text-lg">"Terimakasih Bapak, doakan kami sukses, kami sayang bapak."</p>
+    </div>
+  </div>
+</section>
+
+
 
     <!-- Harapan Section -->
     <section id="harapan" class="section harapan" >
@@ -280,7 +298,10 @@
         </div>
     </footer>
 
-    <!-- Loader Modern -->
+    <script type="module" src="main.js"></script>
+</body>
+
+    <!-- Loader -->
     <div id="loader">
         <div class="tech-loader">
             <div class="hexagon hex1"></div>
@@ -295,7 +316,7 @@
         <div class="loader-text">Memuat data XI RPL-4...</div>
     </div>
 
-    <!-- Notifikasi Modern -->
+    <!-- Notifikasi -->
     <div id="notif" class="notif">
         <div class="notif-icon">
             <i class="fas fa-check-circle"></i>
@@ -306,7 +327,21 @@
         </button>
     </div>
 
-    <script type="module" src="main.js"></script>
-  
-</body>
+    <!-- Modal Galeri -->
+    <div id="imageModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc" tabindex="-1" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Tutup modal">&times;</button>
+            <div class="modal-carousel">
+            <!-- Gambar akan diinject JS -->
+            </div>
+            <div class="modal-caption">
+            <h3 id="modalTitle"></h3>
+            <p id="modalDesc"></p>
+            </div>
+            <button class="modal-nav prev" aria-label="Gambar sebelumnya">&lt;</button>
+            <button class="modal-nav next" aria-label="Gambar selanjutnya">&gt;</button>
+        </div>
+        </div>
+    </div>
+
 </html>
