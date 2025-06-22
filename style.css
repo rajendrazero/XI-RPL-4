@@ -1462,9 +1462,9 @@ footer {
 
 @media (max-width: 600px) {
   .modal-content {
-    width: 99vw;
+    width: 90vw;
     min-width: 0;
-    max-width: 99vw;
+    max-width: 90vw;
     border-radius: 12px;
   }
   .modal-carousel {
@@ -1476,13 +1476,6 @@ footer {
   }
   .modal-caption {
     padding: 12px 8px 8px 8px;
-  }
-  .modal-nav {
-    width: 34px;
-    height: 34px;
-    font-size: 1.05rem;
-    left: 6px;
-    right: 6px;
   }
   .modal-close {
     width: 28px;

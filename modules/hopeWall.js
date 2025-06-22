@@ -83,6 +83,10 @@ function renderHopeWall() {
     const card = document.createElement('div');
     card.className = 'hope-card';
     card.innerHTML = `
+      <div class="hope-actions">
+        <button class="edit-hope" data-id="${item.id}" title="Edit"><i class="fas fa-edit"></i></button>
+        <button class="delete-hope" data-id="${item.id}" title="Hapus"><i class="fas fa-trash"></i></button>
+      </div>
       <div class="hope-initial">${item.name.toUpperCase()}</div>
       <div class="hope-text">${item.text}</div>
       <div class="hope-meta">
