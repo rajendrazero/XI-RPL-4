@@ -892,7 +892,8 @@ footer {
     }
     
     .hero-3d {
-        height: 320px;
+        height: 250px;
+        width: 70%;
     }
     
     .hero-buttons {
@@ -1223,7 +1224,7 @@ footer {
     51% {
       transform: translateX(-150%) rotate(-45deg);
       opacity: 0;
-      width: 0%;
+      width: 0%;    
     }
     100% {
       transform: translateX(0) rotate(0);

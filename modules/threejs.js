@@ -4,7 +4,7 @@ export function init3DModel() {
       el: "#vanta-bg",
       mouseControls: true,
       touchControls: true,
-      gyroControls: false,
+      gyroControls: true,
       minHeight: 200.00,
       minWidth: 200.00,
       scale: 1.00,
