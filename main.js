@@ -190,33 +190,6 @@ function initMobileMenu() {
     });
 }
 
-
-//Data Kelas
-fetch('data.json') // File JSON kamu
-.then(response => response.json())
-.then(data => {
-    const container = document.getElementById('team-container');
-    data.forEach(member => {
-    const card = `
-        <div class="team-card animate-on-scroll">
-        <div class="team-img">
-            <img src="${member.image}" alt="${member.role}">
-        </div>
-        <div class="team-info">
-            <h3>${member.name}</h3>
-            <p>${member.role}</p>
-            <div class="team-social">
-            <a href="${member.social.instagram}" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="${member.social.github}" class="social-icon"><i class="fab fa-github"></i></a>
-            <a href="${member.social.linkedin}" class="social-icon"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
-        </div>`;
-    container.innerHTML += card;
-    });
-});
-
-
 // Initialize when page is loaded
 window.addEventListener('load', () => {
     init3DModel();
@@ -236,3 +209,394 @@ window.addEventListener('load', () => {
         }
     });
 });
+
+
+
+
+
+
+
+
+    // Team data array
+    const teamData = [
+        {
+          "name": "Pak Ardiansyah, ST",
+          "role": "Wali Kelas",
+          "image": "img/struktur/pak-ardiansyah.jpg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Muhammad Nur Rajif",
+          "role": "Ketua Kelas",
+          "image": "img/struktur/rajif.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Kayla Khairunnisa",
+          "role": "Sekretaris",
+          "image": "img/struktur/kayla.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Syafira Azhara",
+          "role": "Bendahara",
+          "image": "img/struktur/syafira.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Dimas Pradhivta",
+          "role": "Wakil Ketua",
+          "image": "img/struktur/dimas.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Az-zahra",
+          "role": "Wakil Sekretaris",
+          "image": "img/struktur/zahra.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Dona Tiara Dewi",
+          "role": "Wakil Bendahara",
+          "image": "img/struktur/dona.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Afsar Nafis",
+          "role": "Siswa",
+          "image": "img/struktur/afsar.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Ahmad Faozan Zebua",
+          "role": "Siswa",
+          "image": "img/struktur/pojan.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Alvino Nugraha Nasution",
+          "role": "Siswa",
+          "image": "img/struktur/alvino_nugraha.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Alzira Ukhty Zaskia",
+          "role": "Siswa",
+          "image": "img/struktur/alzira_ukhty.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Amanda Aulia Shafira",
+          "role": "Siswa",
+          "image": "img/struktur/amanda_aulia.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Awanda Dhaffa Raditya",
+          "role": "Siswa",
+          "image": "img/struktur/awanda_dhaffa.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Bintang Aditya Risfa",
+          "role": "Siswa",
+          "image": "img/struktur/bintang_aditya.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Brenda Estella Silalahi",
+          "role": "Siswa",
+          "image": "img/struktur/brenda_estella.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Chindi Aulia",
+          "role": "Siswa",
+          "image": "img/struktur/chindi.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Dania Sifa",
+          "role": "Siswa",
+          "image": "img/struktur/dania.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Dhea Afrilla Dewi",
+          "role": "Siswa",
+          "image": "img/struktur/dhea_afrilla.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Erlangga Ramzi Putra",
+          "role": "Siswa",
+          "image": "img/struktur/erlangga_ramzi.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Gracia Jovina Simanjuntak",
+          "role": "Siswa",
+          "image": "img/struktur/gracia_jovina.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Haidil Habibi",
+          "role": "Siswa",
+          "image": "img/struktur/haidil.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Intan Wahyu Kesuma",
+          "role": "Siswa",
+          "image": "img/struktur/intan_wahyu.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Keysha Fira Maenda",
+          "role": "Siswa",
+          "image": "img/struktur/keysha_fira.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Luvia Hanum",
+          "role": "Siswa",
+          "image": "img/struktur/luvia.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Muhammad Fahdhy Akbar",
+          "role": "Siswa",
+          "image": "img/struktur/muhammad_fahdhy.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Muhammad Shubki Arifin",
+          "role": "Siswa",
+          "image": "img/struktur/muhammad_shubki.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Najla Ajjauza",
+          "role": "Siswa",
+          "image": "img/struktur/najla.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Nurannisa",
+          "role": "Siswa",
+          "image": "img/struktur/nurannisa.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Putri Ghaisani Sahputra",
+          "role": "Siswa",
+          "image": "img/struktur/putri.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Rajendra Athallah Fawwaz",
+          "role": "Siswa",
+          "image": "img/struktur/rajendra_athallah.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Randi Hartono",
+          "role": "Siswa",
+          "image": "img/struktur/randi.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Rendi Razaile",
+          "role": "Siswa",
+          "image": "img/struktur/rendi.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Ridwan Al Hafiz",
+          "role": "Siswa",
+          "image": "img/struktur/ridwan_al.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Satria Raffi Affandi",
+          "role": "Siswa",
+          "image": "img/struktur/satria_raffi.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        },
+        {
+          "name": "Tri Aulia Zahra",
+          "role": "Siswa",
+          "image": "img/struktur/tri_aulia.jpeg",
+          "social": {
+            "instagram": "#",
+            "github": "#",
+            "linkedin": "#"
+          }
+        }
+      ];      
+
+    // Function to generate team cards
+    function generateTeamCards() {
+        const container = document.getElementById('team-container');
+        
+        teamData.forEach(member => {
+            const card = document.createElement('div');
+            card.className = 'team-card animate-on-scroll';
+            
+            card.innerHTML = `
+                <div class="team-img">
+                    <img src="${member.image}" alt="${member.role}">
+                </div>
+                <div class="team-info">
+                    <h3>${member.name}</h3>
+                    <p>${member.role}</p>
+                    <div class="team-social">
+                        <a href="${member.social.instagram}" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="${member.social.github}" class="social-icon"><i class="fab fa-github"></i></a>
+                        <a href="${member.social.linkedin}" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            `;
+            
+            container.appendChild(card);
+        });
+    }
+
+    // Generate cards when the page loads
+    window.addEventListener('DOMContentLoaded', generateTeamCards);
