@@ -883,6 +883,8 @@ footer {
 
     .hero-3d{
         order: -1;
+        height: 250px;
+        width: 70%;
     }
 }
 
