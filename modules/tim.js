@@ -16,11 +16,11 @@ const teamData = [
       "role": "Ketua Kelas",
       "image": "img/struktur/rajif.jpeg",
       "social": {
-        "instagram": "#",
-        "github": "#",
+        "instagram": "https://www.instagram.com/m.nurrajif/",
+        "github": "https://github.com/Kaskiskus872",
         "linkedin": "#"
       }
-    },
+    },,
     {
       "name": "Kayla Khairunnisa",
       "role": "Sekretaris",
@@ -187,7 +187,7 @@ const teamData = [
       "image": "img/struktur/erlangga.jpeg",
       "social": {
         "instagram": "#",
-        "github": "#",
+        "github": "https://github.com/erlangga4408",
         "linkedin": "#"
       }
     },
@@ -296,9 +296,9 @@ const teamData = [
       "role": "Siswa",
       "image": "img/struktur/rajendra.jpg",
       "social": {
-        "instagram": "#",
-        "github": "#",
-        "linkedin": "#"
+        "instagram": "https://www.instagram.com/rfz08_/",
+        "github": "https://github.com/rajendrazero",
+        "linkedin": "https://www.linkedin.com/in/raj-rajendra-athallah-fawwaz-443957317?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
       }
     },
     {
@@ -371,13 +371,13 @@ const teamData = [
           <h3>${member.name}</h3>
           <p>${member.role}</p>
           <div class="team-social">
-            <a href="${member.social.instagram}" class="social-icon" data-link="${member.social.instagram}" aria-label="Instagram ${member.name}">
+            <a href="${member.social.instagram}" class="social-icon" data-link="${member.social.instagram}" aria-label="Instagram ${member.name}" target="_blank">
               <i class="fab fa-instagram"></i>
             </a>
-            <a href="${member.social.github}" class="social-icon" data-link="${member.social.github}" aria-label="GitHub ${member.name}">
+            <a href="${member.social.github}" class="social-icon" data-link="${member.social.github}" aria-label="GitHub ${member.name}" target="_blank">
               <i class="fab fa-github"></i>
             </a>
-            <a href="${member.social.linkedin}" class="social-icon" data-link="${member.social.linkedin}" aria-label="LinkedIn ${member.name}">
+            <a href="${member.social.linkedin}" class="social-icon" data-link="${member.social.linkedin}" aria-label="LinkedIn ${member.name}" target="_blank"">
               <i class="fab fa-linkedin"></i>
             </a>
           </div>
