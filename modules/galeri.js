@@ -96,7 +96,7 @@ const galleryData = [
   },
   {
     img: [
-      "img/kegiatan/random-laki-laki",
+      "img/kegiatan/random-laki-laki1",
       "img/kegiatan/random-laki-laki2",
       "img/kegiatan/random-laki-laki3",
       "img/kegiatan/random-laki-laki4",
