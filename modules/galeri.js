@@ -23,6 +23,20 @@ const galleryData = [
   },
   {
     img: [
+      "img/kegiatan/hari-guru",
+      "img/kegiatan/hari-guru2",
+      "img/kegiatan/hari-guru3",
+      "img/kegiatan/hari-guru4",
+      "img/kegiatan/hari-guru5",
+      "img/kegiatan/hari-guru6",
+      "img/kegiatan/hari-guru7",
+      "img/kegiatan/hari-guru8",
+    ],
+    title: "Perayaan Hari Guru",
+    desc: "Merayakan Hari Guru Nasional SMKN9 Medan"
+  },
+  {
+    img: [
       "img/kegiatan/praktik-nikah",
       "img/kegiatan/praktik-nikah2",
       "img/kegiatan/praktik-nikah3",
@@ -38,9 +52,34 @@ const galleryData = [
   {
     img: [
       "img/kegiatan/makan-bersama",
+      "img/kegiatan/makan-bersama2",
     ],
     title: "Makan Bersama",
     desc: "Makan Bersama Meningkatkan Kekeluargaan"
+  },
+  {
+    img: [
+      "img/kegiatan/hbd-dimas",
+      "img/kegiatan/hbd-dimas2",
+      "img/kegiatan/hbd-dimas3"
+    ],
+    title: "Ulang Tahun Dimas",
+    desc: "Merayakan Ulang Tahun ke 17 Dimas"
+  },
+  {
+    img: [
+      "img/kegiatan/hbd-kayla",
+      "img/kegiatan/hbd-kayla2",
+      "img/kegiatan/hbd-kayla3",
+      "img/kegiatan/hbd-kayla4",
+      "img/kegiatan/hbd-kayla5",
+      "img/kegiatan/hbd-kayla6",
+      "img/kegiatan/hbd-kayla7",
+      "img/kegiatan/hbd-kayla8",
+      "img/kegiatan/hbd-kayla9",
+    ],
+    title: "Ulang Tahun Kayla",
+    desc: "Merayakan Ulang Tahun ke 17 Kayla"
   },
   {
     img: [
@@ -50,6 +89,7 @@ const galleryData = [
       "img/kegiatan/random4",
       "img/kegiatan/random5",
       "img/kegiatan/random6",
+      "img/kegiatan/random7",
     ],
     title: "Random",
     desc: "Foto Foto Random"
@@ -68,7 +108,24 @@ function showImage(index) {
   currentIndex = index;
 }
 
-function openModal(images, title, desc, clickedIndex) {
+function checkImageExists(url) {
+  return new Promise((resolve) => {
+    const img = new window.Image();
+    img.onload = () => resolve(true);
+    img.onerror = () => resolve(false);
+    img.src = url;
+  });
+}
+
+async function getValidImageUrl(base) {
+  const jpg = base + '.jpg';
+  const jpeg = base + '.jpeg';
+  if (await checkImageExists(jpg)) return jpg;
+  if (await checkImageExists(jpeg)) return jpeg;
+  return jpg; // fallback
+}
+
+async function openModal(images, title, desc, clickedIndex) {
   const modal = document.getElementById("imageModal");
   if (!modal) {
     console.error("[Galeri Debug] Modal element not found!");
@@ -79,11 +136,15 @@ function openModal(images, title, desc, clickedIndex) {
   const modalTitle = document.getElementById("modalTitle");
   const modalDesc = document.getElementById("modalDesc");
 
+  // Cek ekstensi gambar
+  const imgTags = await Promise.all(images.map(async (src, i) => {
+    const url = await getValidImageUrl(src);
+    return `<img src="${url}" class="${i === clickedIndex ? "active" : ""}">`;
+  }));
+
   modal.classList.remove("hidden");
   modal.classList.add("show");
-  modalCarousel.innerHTML = images.map((src, i) => `
-    <img src="${src}.jpg" class="${i === clickedIndex ? "active" : ""}">
-  `).join("");
+  modalCarousel.innerHTML = imgTags.join("");
 
   modalTitle.textContent = title;
   modalDesc.textContent = desc;
@@ -94,7 +155,7 @@ function openModal(images, title, desc, clickedIndex) {
   updateNavButtons();
 }
 
-function renderGallery(data) {
+async function renderGallery(data) {
   const container = document.getElementById("galleryContainer");
   if (!container) {
     console.error("[Galeri Debug] Gallery container not found!");
@@ -104,20 +165,26 @@ function renderGallery(data) {
 
   container.innerHTML = "";
 
-  data.forEach((item, index) => {
+  for (const [index, item] of data.entries()) {
     const el = document.createElement("div");
     el.className = "gallery-item";
 
-    const imagesHTML = item.img.map((url, i) => `
-      <img 
-        src="${url}.jpg" 
-        alt="${item.title}" 
-        class="carousel-image ${i === 0 ? "active" : ""}" 
-        loading="lazy"
-        data-img-index="${i}" 
-        data-gallery-index="${index}"
-      >
-    `).join("");
+    // Hanya gunakan ekstensi .jpg
+    let imagesHTML = "";
+    for (let i = 0; i < item.img.length; i++) {
+      const base = item.img[i];
+      const jpgUrl = base + ".jpg";
+      imagesHTML += `
+        <img 
+          src="${jpgUrl}" 
+          alt="${item.title}" 
+          class="carousel-image ${(i === 0) ? "active" : ""}" 
+          loading="lazy"
+          data-img-index="${i}" 
+          data-gallery-index="${index}"
+        >
+      `;
+    }
 
     el.innerHTML = `
       <div class="carousel" data-index="${index}">
@@ -136,19 +203,18 @@ function renderGallery(data) {
     `;
 
     container.appendChild(el);
-  });
+  }
 
   startCarousel();
 
   // Pasang event klik popup setelah gambar ada di DOM
   document.querySelectorAll(".gallery-item .carousel-image").forEach(img => {
-    img.addEventListener("click", () => {
+    img.addEventListener("click", async () => {
       const galleryIndex = +img.dataset.galleryIndex;
       const imgIndex = +img.dataset.imgIndex;
       const data = galleryData[galleryIndex];
-      console.log("[Galeri Debug] Gambar diklik", { galleryIndex, imgIndex, data });
-      debugger;
-      openModal(data.img, data.title, data.desc, imgIndex);
+      // Buka modal dengan pengecekan ekstensi
+      await openModal(data.img, data.title, data.desc, imgIndex);
     });
   });
 }
