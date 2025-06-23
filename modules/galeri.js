@@ -93,7 +93,39 @@ const galleryData = [
     ],
     title: "Random",
     desc: "Foto Foto Random"
-  }
+  },
+  {
+    img: [
+      "img/kegiatan/random-laki-laki",
+      "img/kegiatan/random-laki-laki2",
+      "img/kegiatan/random-laki-laki3",
+      "img/kegiatan/random-laki-laki4",
+      "img/kegiatan/random-laki-laki5",
+      "img/kegiatan/random-laki-laki6",
+      "img/kegiatan/random-laki-laki7",
+      "img/kegiatan/random-laki-laki8",
+      "img/kegiatan/random-laki-laki9",
+      "img/kegiatan/random-laki-laki10",
+      "img/kegiatan/random-laki-laki11",
+      "img/kegiatan/random-laki-laki12",
+      "img/kegiatan/random-laki-laki13",
+      "img/kegiatan/random-laki-laki14",
+      "img/kegiatan/random-laki-laki15",
+      "img/kegiatan/random-laki-laki16",
+      "img/kegiatan/random-laki-laki17",
+      "img/kegiatan/random-laki-laki18",
+      "img/kegiatan/random-laki-laki19",
+      "img/kegiatan/random-laki-laki20",
+      "img/kegiatan/random-laki-laki21",
+      "img/kegiatan/random-laki-laki22",
+      "img/kegiatan/random-laki-laki23",
+      "img/kegiatan/random-laki-laki24",
+      "img/kegiatan/random-laki-laki25",
+      "img/kegiatan/random-laki-laki26",
+    ],
+    title: "Random2",
+    desc: "Foto Foto Random2"
+  },
 ];
 
 // Variabel global modal control
