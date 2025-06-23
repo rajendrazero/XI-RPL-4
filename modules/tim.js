@@ -124,7 +124,7 @@ const teamData = [
     {
       "name": "Awanda Dhaffa Raditya",
       "role": "Siswa",
-      "image": "img/struktur/awanda.jpg",
+      "image": "img/struktur/awanda.jpeg",
       "social": {
         "instagram": "#",
         "github": "#",
